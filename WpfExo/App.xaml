@@ -1,0 +1,32 @@
+﻿<Application x:Class="WpfExo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfExo"
+             xmlns:localBindings="clr-namespace:WpfExo.Bindings"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <localBindings:IntToColorConverter x:Key="IntToColorConverter"/>
+        <localBindings:DateToStringConverter x:Key="DateToStringConverter"/>
+        <!--<localBindings:DoubleToHeightConverter x:Key="DoubleToHeightConverter"/>-->
+        <GridLengthConverter x:Key="GridLengthConverter"/>
+        <Style x:Key="TextBlockBlue" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="9"/>
+            <Setter Property="Foreground" Value="DarkRed"/>
+        </Style>
+        <DataTemplate x:Key="ListeMessageTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock TextAlignment="Left"  Width="20" Text="{Binding MyVar}" Style="{StaticResource TextBlockBlue}" />
+                <Button Content="Supprimer" Height="20" Width="70" Command="{Binding DataContext.DelMessageTemplate,RelativeSource={RelativeSource AncestorType={x:Type ListBox}}, Mode=OneWay }" CommandParameter="{Binding .}"/>
+                <TextBlock Margin="10, 0, 10, 0" TextAlignment="Left" Width="70" Text="{Binding MyEmetteur}" Foreground="Green"   />
+                <TextBlock TextAlignment="Left" Width="200" Text="{Binding MyDate, Converter={StaticResource DateToStringConverter}}" Foreground="LightBlue"  />
+                <TextBlock TextAlignment="Left" Width="500" Text="{Binding MyMessage}" Foreground="LightCoral"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="ListeImageTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock TextAlignment="Left"  Width="200" Text="{Binding ListeImage}"/>
+                <Image Source="{Binding ListeImage}" Height="50" Width="50" Stretch="Fill"/>
+            </StackPanel>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

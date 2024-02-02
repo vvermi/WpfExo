@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfExo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfExo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="986" Width="826">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Fichier">
+                <MenuItem Header="Quitter" Click="MenuItem_Quitter"/>
+            </MenuItem>
+            <MenuItem Header="Exercices">
+                <MenuItem Name="Exo1" Header="Exercice 1 - StackPanel Hello World" Click="MenuItem_Click_1" />
+                <MenuItem Name="Exo2" Header="Exercice 2 - Texte et FontStyle" Click="MenuItem_Click_1"/>
+                <MenuItem Name="Exo3" Header="Exercice 3 - Textbox et Label" Click="MenuItem_Click_1"/>
+                <MenuItem Name="Exo4" Header="Exercice 4 - Bouton Texte et Image" Click="MenuItem_Click_1"/>
+                <MenuItem Name="Exo5" Header="Exercice 5 - Radio Boutons" Click="MenuItem_Click_1" />
+                <MenuItem Name="Exo6" Header="Exercice 6 - Exo1 en C#" Click="MenuItem_Click_1"/>
+                <MenuItem Name="Exo7" Header="Exercice 7 - ListBox remplie en C#" Click="MenuItem_Click_1"/>
+                <MenuItem Name="Exo8" Header="Exercice 8 - ComboBox remplie en C#" Click="MenuItem_Click_1"/>
+                <MenuItem Name="Exo9" Header="Exercice 9 - Grille avec des buttons" Click="MenuItem_Click_1"/>
+                <MenuItem Name="Exo10" Header="Exercice 10 - Dock avec menu à gauche" Click="MenuItem_Click_1"/>
+            </MenuItem>
+            <MenuItem Header="Bindings" Click="MenuItem_Click_2"/>
+        </Menu>
+        <ContentControl Name="MainControl1" Background="Red" DockPanel.Dock="Top"></ContentControl>
+    </DockPanel>
+</Window>
